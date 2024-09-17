@@ -1,6 +1,18 @@
 import css from './ImageCard.module.css';
 
-const ImageCard = ({ small, regular, description, openModal }) => {
+export interface ImageCardProps {
+  small: string;
+  regular: string;
+  description: string;
+  openModal: (regular: string, description: string) => void;
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({
+  small,
+  regular,
+  description,
+  openModal,
+}) => {
   return (
     <div className={css.imageWrapper}>
       <img
