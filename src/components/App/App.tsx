@@ -42,7 +42,7 @@ const App: React.FC = () => {
           toast('There are no pictures for your request', {
             icon: <RiEmotionSadLine />,
           });
-          // setPage(1);
+
           setImages([]);
           setTotalPages(0);
           setShowBtn(false);
@@ -86,11 +86,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <SearchBar
-        onSubmit={handleSubmit}
-        query={query}
-        onQueryChange={setQuery}
-      />
+      <SearchBar onSubmit={handleSubmit} />
       {error && <ErrorMessage message={error} />}
       {loading && <Loader />}
       <ImageGallery images={images} openModal={openModal} />
