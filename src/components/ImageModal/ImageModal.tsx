@@ -1,6 +1,6 @@
 import Modal, { Styles } from 'react-modal';
 import css from './ImageModal.module.css';
-import { ModalImage } from '../App/App.types';
+import { ModalImage } from '../../types/types';
 Modal.setAppElement('#root');
 
 const ImageModal: React.FC<ModalImage> = ({
@@ -41,7 +41,6 @@ const ImageModal: React.FC<ModalImage> = ({
       >
         <div className={css.content}>
           <img src={imgUrl} alt={imgAlt} />
-          <p>{description}</p>
         </div>
       </Modal>
     </div>

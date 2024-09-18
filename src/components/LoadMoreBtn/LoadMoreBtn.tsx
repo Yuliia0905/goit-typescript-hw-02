@@ -1,4 +1,5 @@
-import css from './LoadMoreBtn.module.css';
+import { Button } from '@mui/material';
+// import css from './LoadMoreBtn.module.css';
 
 interface onClickProps {
   onClick: () => void;
@@ -6,9 +7,12 @@ interface onClickProps {
 
 export const LoadMoreBtn: React.FC<onClickProps> = ({ onClick }) => {
   return (
-    <button className={css.btn} type="button" onClick={onClick}>
-      LoadMoreBtn
-    </button>
+    <Button variant="contained" onClick={onClick}>
+      Load more
+    </Button>
+    // <button className={css.btn} type="button" onClick={onClick}>
+    //   Load more
+    // </button>
   );
 };
 

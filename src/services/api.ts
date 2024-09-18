@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { FetchImages, Image } from '../components/App/App.types';
+import { FetchImages, Image } from '../types/types'
 
 const API_KEY = 'uYj7lZWfuQs73UybVrjxol3O2cOvetuJOpnRAbdlMwg';
 const BASE_URL = 'https://api.unsplash.com';

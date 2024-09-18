@@ -9,7 +9,7 @@ import Loader from '../Loader/Loader';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import ImageModal from '../ImageModal/ImageModal';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
-import { FetchImages, Image, ModalImage } from './App.types';
+import { FetchImages, Image, ModalImage } from '../../types/types';
 import './App.css';
 
 const App: React.FC = () => {
@@ -26,11 +26,10 @@ const App: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [showBtn, setShowBtn] = useState<boolean>(false);
-  const [showImages, setShowImages] = useState<boolean>(false);
+  // const [setShowImages] = useState<boolean>(false);
 
   useEffect(() => {
     if (!query) return;
-    // setShowBtn(false);
     setLoading(true);
     setError(null);
     const fetchImages = async () => {
@@ -55,11 +54,11 @@ const App: React.FC = () => {
 
         setTotalPages(total_pages);
         setShowBtn(page < total_pages);
-      } catch (err) {
+      } catch (err: unknown) {
         setError((err as Error).message);
       } finally {
         setLoading(false);
-        setShowImages(false);
+        // setShowImages(false);
       }
     };
 
@@ -70,7 +69,7 @@ const App: React.FC = () => {
     setQuery(searchQuery);
     setImages([]);
     setPage(1);
-    setShowImages(true);
+    // setShowImages(true);
   };
 
   const handleLoadMoreBtn = (): void => {
